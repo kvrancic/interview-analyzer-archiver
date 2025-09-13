@@ -26,6 +26,13 @@ class TranscriptionTool(BaseTool):
         Returns:
             Transcribed text from the audio file
         """
+        # Check for cached transcription first (for development)
+        cache_file = "cached_transcription.txt"
+        if os.path.exists(cache_file):
+            print(f"Using cached transcription from {cache_file}")
+            with open(cache_file, 'r') as f:
+                return f.read()
+
         api_key = os.getenv('OPENROUTER_API_KEY')
         if not api_key:
             return "Error: OPENROUTER_API_KEY not found in environment variables. Please set it in .env file."
@@ -95,7 +102,14 @@ class TranscriptionTool(BaseTool):
             )
 
             print("Transcription completed successfully!")
-            return response.choices[0].message.content
+            transcription = response.choices[0].message.content
+
+            # Save to cache for development
+            with open("cached_transcription.txt", 'w') as f:
+                f.write(transcription)
+            print("Transcription cached for future use.")
+
+            return transcription
 
         except Exception as e:
             return f"Error during transcription: {str(e)}"

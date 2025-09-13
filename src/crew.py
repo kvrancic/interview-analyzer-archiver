@@ -1,5 +1,8 @@
 import os
+import json
+from pathlib import Path
 from typing import Dict, Any
+from datetime import datetime
 from dotenv import load_dotenv
 from crewai import Crew, Process
 from src.agents import create_agents
@@ -58,19 +61,59 @@ class InterviewAssistantCrew:
             tasks=tasks,
             process=Process.sequential,  # Tasks execute in order
             verbose=True,  # Show detailed execution logs
-            memory=True,  # Enable memory for better context
-            cache=True,  # Cache results for efficiency
+            memory=False,  # Disable memory to avoid API errors
+            cache=False,  # Disable cache to avoid issues
             max_rpm=10  # Rate limiting for API calls
         )
 
         print("\nStarting interview analysis...")
         print("-" * 50)
 
-        # Execute the crew
-        result = crew.kickoff()
+        # Create output directory
+        output_dir = Path(inputs.get('output_dir', 'interviews'))
+        output_dir.mkdir(exist_ok=True)
 
-        print("\n" + "=" * 50)
-        print("Interview analysis complete!")
-        print("=" * 50)
+        # Create a timestamped subdirectory for this analysis
+        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        analysis_dir = output_dir / f"analysis_{timestamp}"
+        analysis_dir.mkdir(exist_ok=True)
 
-        return result
+        try:
+            # Execute the crew
+            result = crew.kickoff()
+
+            # Save the final result
+            final_output = analysis_dir / "final_report.md"
+            with open(final_output, 'w') as f:
+                f.write(str(result))
+            print(f"\n✅ Final report saved to {final_output}")
+
+            # Save metadata
+            metadata = {
+                "timestamp": timestamp,
+                "audio_file": inputs['audio_path'],
+                "company": inputs['company'],
+                "role": inputs['role'],
+                "status": "completed"
+            }
+            metadata_file = analysis_dir / "metadata.json"
+            with open(metadata_file, 'w') as f:
+                json.dump(metadata, f, indent=2)
+
+            print("\n" + "=" * 50)
+            print("Interview analysis complete!")
+            print(f"Results saved in: {analysis_dir}")
+            print("=" * 50)
+
+            return result
+
+        except Exception as e:
+            print(f"\n❌ Error during crew execution: {e}")
+
+            # Save error log
+            error_file = analysis_dir / "error_log.txt"
+            with open(error_file, 'w') as f:
+                f.write(f"Error occurred at: {datetime.now()}\n")
+                f.write(f"Error: {str(e)}\n")
+
+            raise
