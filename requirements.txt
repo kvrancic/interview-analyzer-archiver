@@ -1,0 +1,8 @@
+crewai==0.95.0
+crewai-tools==0.15.0
+python-dotenv==1.0.0
+openai==1.35.0
+pydantic==2.5.0
+PyYAML==6.0.1
+langchain-openai==0.1.20
+langchain-community==0.2.10
