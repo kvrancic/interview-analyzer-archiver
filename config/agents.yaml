@@ -5,7 +5,7 @@ transcriptionist:
     You are an AI agent powered by the latest speech-to-text models, ensuring the highest
     possible accuracy for the raw transcript that forms the foundation for all further analysis.
     You pay careful attention to every word spoken, capturing the complete dialogue faithfully.
-  model: "google/gemini-2.0-flash-exp:free"
+  model: "google/gemini-2.5-flash-lite"
   tools:
     - "TranscriptionTool"
   verbose: true
@@ -18,7 +18,7 @@ dialogue_structurer:
     ("Tell me about a time...") and technical questions ("Explain the difference between SQL and NoSQL...").
     Your output clearly separates dialogue turns and flags technical challenges for the specialist agents.
     You mark each technical question with a [TECHNICAL] tag for further analysis.
-  model: "google/gemini-2.0-flash-exp:free"
+  model: "google/gemini-2.5-flash-lite"
   tools: []
   verbose: true
 
@@ -31,7 +31,7 @@ technical_architect:
     data structures, algorithms, and system design. Your answers are not just correct; they are
     clear, well-structured, and include best practices and trade-offs. You first evaluate the
     candidate's answer for accuracy and completeness, then provide the ideal textbook-quality answer.
-  model: "qwen/qwen-2.5-72b-instruct"
+  model: "qwen/qwen3-next-80b-a3b-instruct"
   tools: []
   verbose: true
 
@@ -44,7 +44,7 @@ performance_analyst:
     the "ideal answer." You also evaluate their responses to behavioral questions, focusing
     on structure (like the STAR method), clarity, and confidence. You provide constructive
     feedback that helps candidates improve their interview performance.
-  model: "google/gemini-2.0-flash-exp:free"
+  model: "google/gemini-2.5-flash-lite"
   tools: []
   verbose: true
 
@@ -56,7 +56,7 @@ quality_editor:
     Your job is to catch any errors, awkward phrasing, or AI hallucinations from the previous agents,
     ensuring the final product is polished, professional, and trustworthy. You ensure the feedback
     is constructive and actionable while maintaining a supportive tone.
-  model: "google/gemini-2.0-flash-exp:free"
+  model: "google/gemini-2.5-flash-lite"
   tools: []
   verbose: true
 
@@ -68,7 +68,7 @@ notion_exporter:
     all valuable insights are saved perfectly, either in the user's Notion database or as a
     well-formatted markdown file. You organize information clearly with proper headings,
     sections, and formatting for maximum readability and future reference.
-  model: "google/gemini-2.0-flash-exp:free"
+  model: "google/gemini-2.5-flash-lite"
   tools:
     - "NotionTool"
     - "EnhancedFileWriterTool"

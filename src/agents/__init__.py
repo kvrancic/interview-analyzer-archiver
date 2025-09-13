@@ -46,11 +46,21 @@ def create_agents(config_path: str = "config/agents.yaml") -> Dict[str, Agent]:
 
     for agent_name, config in agents_config.items():
         # Create LLM instance for this agent
+        # Set environment variable for OpenAI client
+        os.environ['OPENAI_API_KEY'] = api_key
+
+        # Prepend openrouter/ to model name for litellm
+        model_name = f"openrouter/{config['model']}"
+
         llm = ChatOpenAI(
-            model=config['model'],
+            model=model_name,
             api_key=api_key,
             base_url=base_url,
-            temperature=0.7
+            temperature=0.7,
+            default_headers={
+                "HTTP-Referer": "https://github.com/yourusername/internship-agent",
+                "X-Title": "Internship Assistant"
+            }
         )
 
         # Create tool instances

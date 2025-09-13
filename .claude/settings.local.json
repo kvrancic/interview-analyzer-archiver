@@ -11,7 +11,9 @@
       "Bash(source:*)",
       "Bash(pip install:*)",
       "Bash(python test:*)",
-      "Bash(python:*)"
+      "Bash(python:*)",
+      "Bash(ffmpeg:*)",
+      "Bash(PYTHONPATH=. python src/main.py --audio audio/interview_compressed.mp3 --company \"Tech Company\" --role \"Software Engineer\")"
     ],
     "deny": [],
     "ask": []
