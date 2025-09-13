@@ -2,7 +2,7 @@ import os
 import base64
 from typing import Type
 from pydantic import BaseModel, Field
-from crewai_tools import BaseTool
+from crewai.tools import BaseTool
 from openai import OpenAI
 
 
@@ -49,7 +49,11 @@ class TranscriptionTool(BaseTool):
             # Check file size (20MB limit for inline data)
             file_size_mb = len(audio_data) / (1024 * 1024)
             if file_size_mb > 20:
-                return f"Error: Audio file is too large ({file_size_mb:.1f}MB). Maximum size is 20MB."
+                # For now, return an error. In production, you could:
+                # 1. Compress the audio
+                # 2. Split into chunks
+                # 3. Use a different transcription service
+                return f"Error: Audio file is too large ({file_size_mb:.1f}MB). Maximum size is 20MB. Please use a smaller audio file or compress it."
 
             # Encode to base64
             audio_base64 = base64.b64encode(audio_data).decode('utf-8')

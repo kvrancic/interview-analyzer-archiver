@@ -6,7 +6,12 @@
       "Bash(git init:*)",
       "Bash(git branch:*)",
       "Bash(git commit:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(pip index versions:*)",
+      "Bash(source:*)",
+      "Bash(pip install:*)",
+      "Bash(python test:*)",
+      "Bash(python:*)"
     ],
     "deny": [],
     "ask": []
