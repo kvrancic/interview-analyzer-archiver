@@ -182,16 +182,6 @@ To test with a sample audio file:
 2. Run: `python src/main.py --audio audio/sample_interview.mp3`
 3. Check the `interviews/` directory for the output
 
-## 📝 Key Requirements
-
-This project was built with specific requirements:
-- ✅ MUST use CrewAI framework (hard requirement)
-- ✅ Process interview audio into learning materials
-- ✅ Extract ALL questions and answers
-- ✅ Provide model answers for every question
-- ✅ Create documents suitable for interview preparation
-- ✅ Archive interviews for future learning
-
 ## 🤝 Contributing
 
 This is a homework project, but suggestions and improvements are welcome!
@@ -200,21 +190,17 @@ This is a homework project, but suggestions and improvements are welcome!
 
 MIT License - See LICENSE file for details
 
+## 🔮 Future Enhancements
+- [ ] Coding interview support 
+  - [ ] After transcription, new agent figures out is it live-coding interview or not
+  - [ ] If it is, it routes to another agent that solves coding tasks 
+  - [ ] After solving, it routes to another agent that checks the solution inside a code sandbox 
+
 ## 🙏 Acknowledgments
 
 - CrewAI framework for multi-agent orchestration
 - OpenRouter for unified AI model access
 - MIT AI Studio for the assignment framework
-
-## 💡 Future Enhancements
-
-- [ ] Support for video interviews
-- [ ] Real-time transcription during interviews
-- [ ] Integration with calendar apps for scheduling
-- [ ] Export to multiple formats (PDF, DOCX)
-- [ ] Multi-language support
-- [ ] Interview question bank suggestions
-
 ---
 
 **Built with CrewAI** | **Powered by OpenRouter**
