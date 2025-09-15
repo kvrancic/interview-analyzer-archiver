@@ -27,7 +27,7 @@ class TranscriptionTool(BaseTool):
             Transcribed text from the audio file
         """
         # Check for cached transcription first (for development)
-        cache_file = "cached_transcription.txt"
+        cache_file = "full_transcript_cache.txt"
         if os.path.exists(cache_file):
             print(f"Using cached transcription from {cache_file}")
             with open(cache_file, 'r') as f:
@@ -105,7 +105,7 @@ class TranscriptionTool(BaseTool):
             transcription = response.choices[0].message.content
 
             # Save to cache for development
-            with open("cached_transcription.txt", 'w') as f:
+            with open("full_transcript_cache.txt", 'w') as f:
                 f.write(transcription)
             print("Transcription cached for future use.")
 

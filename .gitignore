@@ -39,3 +39,11 @@ htmlcov/
 dist/
 build/
 *.egg-info/
+
+*.mp3
+interviews/
+audio/
+CLAUDE.md
+IDEA.md
+PLAN.md
+TASK.md

@@ -1,0 +1,460 @@
+[
+  {
+    "question": "What would you say a few things you\u2019ve taken away from that experience are?",
+    "candidate_answer": "A few things\u2014first of all, that it\u2019s really hard. It\u2019s really hard and for us students, it isn\u2019t\u2014I wouldn\u2019t say possible because in theory it\u2019s possible, but it isn\u2019t too easy to do something good. So yeah, the most\u2014the things I like about trading is the probability, statistics, and that it\u2019s high-paced also, so you need to be quick on your feet and think of, let\u2019s say, solutions and things like that.",
+    "is_technical": true,
+    "topic": "algorithmic trading",
+    "is_correct": "Partially",
+    "model_answer": "The candidate highlights the difficulty of trading and the need for quick thinking and problem-solving. They also mention enjoying the probabilistic and fast-paced nature of trading.",
+    "key_concepts": [
+      "difficulty of trading",
+      "probabilistic nature of trading",
+      "fast-paced decision making",
+      "problem-solving skills"
+    ]
+  },
+  {
+    "question": "And what kind of asset classes did you trade in your competitions?",
+    "candidate_answer": "We traded\u2014so it was a simulated market. It was a simulated market, and we traded on assets\u2014they were modeled by some models I can\u2019t really remember now. For example, one model was basically drawing cards and that's how much the market moves. And yeah, we traded options and futures there, on those assets.",
+    "is_technical": true,
+    "topic": "trading",
+    "is_correct": "Unknown",
+    "model_answer": "```json\n{\n    \"is_correct\": \"Yes\",\n    \"model_answer\": \"In the simulated market competitions, we traded options and futures. These were based on assets whose movements were determined by various model",
+    "key_concepts": []
+  },
+  {
+    "question": "Ok, on the topic of options, you know some of the basics?",
+    "candidate_answer": "Depends on what are the basics.",
+    "is_technical": true,
+    "topic": "options",
+    "is_correct": "Partially",
+    "model_answer": "The candidate's answer is partially correct because understanding what constitutes 'basics' is crucial before confirming knowledge. However, a more direct confirmation of their understanding of fundamental options concepts would be more informative.",
+    "key_concepts": [
+      "Options Basics",
+      "Call Options",
+      "Put Options",
+      "Strike Price",
+      "Expiration Date",
+      "Premium"
+    ]
+  },
+  {
+    "question": "Ok, I mean maybe you can just start by telling me what a call option is.",
+    "candidate_answer": "A call option, that's basically an agreement that the person who owns the call options has an opportunity to buy at a later time that underlying asset for strike price, but it isn\u2019t obligated to buy it for that price.",
+    "is_technical": true,
+    "topic": "options",
+    "is_correct": "Unknown",
+    "model_answer": "```json\n{\n    \"is_correct\": \"Yes\",\n    \"model_answer\": \"A call option is a contract that gives the buyer the right, but not the obligation, to purchase an underlying asset at a specified price (the st",
+    "key_concepts": []
+  },
+  {
+    "question": "What's the value of the option?",
+    "candidate_answer": "Two.",
+    "is_technical": true,
+    "topic": "options",
+    "is_correct": "Yes",
+    "model_answer": "The value of the option is two. This is determined by counting the number of shaded squares within the option.",
+    "key_concepts": [
+      "counting",
+      "visual interpretation"
+    ]
+  },
+  {
+    "question": "So now let\u2019s say I\u2019m instead one year away from expiring. Would you say that the value of this option is more or less than two?",
+    "candidate_answer": "More than two.",
+    "is_technical": true,
+    "topic": "options",
+    "is_correct": "Yes",
+    "model_answer": "Yes, the value would be more than two. As the option approaches expiration, its time value decreases, but the intrinsic value (the difference between the stock price and the strike price) remains. If the stock price is significantly above the strike price, the intrinsic value alone will be greater than two.",
+    "key_concepts": [
+      "Time Value of Options",
+      "Intrinsic Value of Options",
+      "Option Pricing"
+    ]
+  },
+  {
+    "question": "And what\u2019s your intuition for that?",
+    "candidate_answer": "My intuition for that is that call option is limited for my potential losses, and it is unlimited for my potential gains. So you are basically paying for that stop at losses, let's say.",
+    "is_technical": true,
+    "topic": "options",
+    "is_correct": "Unknown",
+    "model_answer": "```json\n{\n    \"is_correct\": \"Yes\",\n    \"model_answer\": \"The intuition is that buying a call option limits your maximum loss to the premium paid. Conversely, the potential profit is theoretically unlim",
+    "key_concepts": []
+  },
+  {
+    "question": "How would you compare the value of a five-year-out option to a one year out option?",
+    "candidate_answer": "Yeah, five-year is definitely more expensive because let\u2019s say it has more time to go up.",
+    "is_technical": true,
+    "topic": "options",
+    "is_correct": "Unknown",
+    "model_answer": "```json\n{\n    \"is_correct\": \"Yes\",\n    \"model_answer\": \"A five-year-out option is generally more expensive than a one-year-out option because it has a longer time horizon for the underlying asset's pr",
+    "key_concepts": []
+  },
+  {
+    "question": "Do you know what delta is?",
+    "candidate_answer": "I think delta is, let\u2019s say, a derivation or something like that. I know that delta can\u2019t be larger than 1. Delta is something like if my underlying assets increase by one, how much will my option price increase, I think.",
+    "is_technical": true,
+    "topic": "options",
+    "is_correct": "Unknown",
+    "model_answer": "```json\n{\n    \"is_correct\": \"Partially\",\n    \"model_answer\": \"Delta is a measure of an option's price sensitivity to a $1 change in the underlying asset's price. It ranges from 0 to 1 for call options",
+    "key_concepts": []
+  },
+  {
+    "question": "So let\u2019s say I\u2019m at expiry\u2026 What do you think\u2014so as a function of the underlying price, what do you think the delta of the 98 call looks like?",
+    "candidate_answer": "The delta of 98 call\u2026 we are at how\u2014expiration date? One second\u2026 It's very close to one.",
+    "is_technical": true,
+    "topic": "options",
+    "is_correct": "Unknown",
+    "model_answer": "```json\n{\n    \"is_correct\": \"Partially\",\n    \"model_answer\": \"At expiration, the delta of a call option is 1 if the underlying price is above the strike price (in-the-money) and 0 if it's below the st",
+    "key_concepts": []
+  },
+  {
+    "question": "So, no, you don\u2019t need to make a function, I\u2019m just asking you, if the underlying is trading at 100 and the strike price is 98, what\u2019s the delta of your option one second before expiring?",
+    "candidate_answer": "Just to be clear, so strike price is 98, right? Current underlying asset is 100. And we are one second from expiry. And I need to make a function of what exactly? So, no, you don\u2019t need to make a function, I\u2019m just asking you, if the underlying is trading at 100 and the strike price is 98, what\u2019s the delta of your option one second before expiring?",
+    "is_technical": true,
+    "topic": "options",
+    "is_correct": "Unknown",
+    "model_answer": "```json\n{\n    \"is_correct\": \"Yes\",\n    \"model_answer\": \"The delta of an in-the-money option, with the underlying at 100 and strike at 98, one second before expiry would be very close to 1. This is bec",
+    "key_concepts": []
+  },
+  {
+    "question": "Ok, correct. Why do you say that?",
+    "candidate_answer": "Because we are so close to expiry date, every move\u2014it doesn\u2019t carry enough time to move much, let\u2019s say. So one increase of underlying asset, so basically we would have a profit of 3, and the price of the options will then increase by 1 also. Because basically it doesn\u2019t have enough time to move.",
+    "is_technical": true,
+    "topic": "options",
+    "is_correct": "Unknown",
+    "model_answer": "```json\n{\n    \"is_correct\": \"Partially\",\n    \"model_answer\": \"The candidate is partially correct in that time decay (theta) significantly impacts option prices as expiration approaches. However, the s",
+    "key_concepts": []
+  },
+  {
+    "question": "And using similar logic, would you say the value of the option is if the underlying trades at 96?",
+    "candidate_answer": "At 96? Are we also one second from expiry? It\u2019s zero? If it can be negative\u2026 I don\u2019t know if it can be negative, but it\u2019s zero.",
+    "is_technical": true,
+    "topic": "options",
+    "is_correct": "Unknown",
+    "model_answer": "```json\n{\n    \"is_correct\": \"Yes\",\n    \"model_answer\": \"Yes, if the underlying is trading at 96 and the option is at-the-money or out-of-the-money with very little time to expiry, its intrinsic value ",
+    "key_concepts": []
+  },
+  {
+    "question": "Well, you tell me, can it be negative?",
+    "candidate_answer": "Uhm... Not really.",
+    "is_technical": true,
+    "topic": "options",
+    "is_correct": "Partially",
+    "model_answer": "It depends on the context. For example, temperature can be negative, but quantities like mass or length are always non-negative.",
+    "key_concepts": [
+      "Contextual dependence of numbers",
+      "Non-negative quantities"
+    ]
+  },
+  {
+    "question": "So that was one second from expiry, where you have this, essentially, delta profile of a step function at the strike price, right?",
+    "candidate_answer": "At the strike price, step function? What do you mean by step function? What is the domain of that function? Underlying asset, right?",
+    "is_technical": true,
+    "topic": "options",
+    "is_correct": "Unknown",
+    "model_answer": "```json\n{\n    \"is_correct\": \"Partially\",\n    \"model_answer\": \"The candidate correctly identifies that the question is referring to the delta of an option at expiration. However, they seem to misunders",
+    "key_concepts": []
+  },
+  {
+    "question": "I\u2019m just saying, so let\u2019s say I\u2019m one second before expiry. And if underlying is trading below the strike price, we kind of establish it\u2019s delta zero, and if it trades above, it\u2019s more or less delta one, right?",
+    "candidate_answer": "Uhm\u2026 yeah, yeah, yeah.",
+    "is_technical": true,
+    "topic": "options",
+    "is_correct": "Unknown",
+    "model_answer": "```json\n{\n    \"is_correct\": \"Partially\",\n    \"model_answer\": \"While delta approaches 0 for out-of-the-money options and 1 for in-the-money options very close to expiry, it's not a strict binary. The e",
+    "key_concepts": []
+  },
+  {
+    "question": "So what do you think happens to that profile as you move away from expiry?",
+    "candidate_answer": "As I move away from expiry... What happens to the what? The delta or...?",
+    "is_technical": true,
+    "topic": "options",
+    "is_correct": "Unknown",
+    "model_answer": "```json\n{\n    \"is_correct\": \"No\",\n    \"model_answer\": \"As you move away from expiry, the delta of an option generally moves closer to zero. This is because the probability of the option expiring in-th",
+    "key_concepts": []
+  },
+  {
+    "question": "Yeah, to the shape of the delta as a function of underlying price.",
+    "candidate_answer": "I would say\u2026 Hmm... Ok, I\u2019m not sure again I understand. So, are we, let's say, moving in time to the expiration or...?",
+    "is_technical": true,
+    "topic": "options",
+    "is_correct": "No",
+    "model_answer": "The question asks about the shape of the delta as a function of the underlying price, not time to expiration. Delta's shape is typically an S-curve, increasing from -1 to 1 as the underlying price rises, with the steepest slope around the at-the-money price.",
+    "key_concepts": [
+      "Delta",
+      "Option Greeks",
+      "Underlying Price",
+      "S-curve"
+    ]
+  },
+  {
+    "question": "Now let\u2019s say we are five years from expiry. What do you think the delta as a function of the current underlying price looks like?",
+    "candidate_answer": "Oh, the current underlying price\u2026 So, if it\u2019s very close to the underlying price, and five years\u2026 I would say\u2026",
+    "is_technical": true,
+    "topic": "options",
+    "is_correct": "No",
+    "model_answer": "Five years from expiry, the delta of an option will be very close to the delta of the underlying asset itself, regardless of the strike price. This is because the option is deep in-the-money and will move almost dollar-for-dollar with the underlying.",
+    "key_concepts": [
+      "Delta",
+      "Time to Expiry",
+      "In-the-money options"
+    ]
+  },
+  {
+    "question": "Would you expect the delta to still be one?",
+    "candidate_answer": "No, it should be definitely lower because a change today, let\u2019s say, matters less than a change one second before. So one increase in one matters much less than an increase because it has time to move much more up or down.",
+    "is_technical": true,
+    "topic": "options",
+    "is_correct": "Unknown",
+    "model_answer": "```json\n{\n    \"is_correct\": \"No\",\n    \"model_answer\": \"No, the delta would not still be one. The delta represents the change in option price for a one-unit change in the underlying asset's price. As t",
+    "key_concepts": []
+  },
+  {
+    "question": "And what do you think that number tends towards as you move further and further away from expiry?",
+    "candidate_answer": "I would say zero.",
+    "is_technical": true,
+    "topic": "options",
+    "is_correct": "Yes",
+    "model_answer": "As you move further away from expiry, the probability of an option expiring worthless increases significantly. Therefore, the expected value or the price of the option tends towards zero.",
+    "key_concepts": [
+      "Time Decay (Theta)",
+      "Option Pricing",
+      "Probability of Expiry"
+    ]
+  },
+  {
+    "question": "Ok, why?",
+    "candidate_answer": "Because, yeah, because of that\u2014because it has a lot of time to move, so one move up doesn\u2019t really change that much in the long run. That's my intuition, let\u2019s say.",
+    "is_technical": true,
+    "topic": "options",
+    "is_correct": "Yes",
+    "model_answer": "The candidate's intuition is correct. In a game with many turns, a single move has a diminishing impact on the overall outcome because there are many subsequent opportunities to adjust and recover from any initial disadvantage.",
+    "key_concepts": [
+      "long-term strategy",
+      "diminishing marginal returns",
+      "game theory"
+    ]
+  },
+  {
+    "question": "So if every team is equally skilled, then what\u2019s the expected value of each team?",
+    "candidate_answer": "Expected value of each team is... one second\u2026 It should be 50.",
+    "is_technical": true,
+    "topic": "probability",
+    "is_correct": "Unknown",
+    "model_answer": "```json\n{\n    \"is_correct\": \"Yes\",\n    \"model_answer\": \"If every team is equally skilled, then each team has an equal probability of winning any given match. Therefore, the expected value of each team",
+    "key_concepts": []
+  },
+  {
+    "question": "So what\u2019s the expected value\u2014can you calculate for me the expected value of team 1?",
+    "candidate_answer": "Expected value of team 1 is\u2026 ok, one second\u2026",
+    "is_technical": true,
+    "topic": "probability",
+    "is_correct": "No",
+    "model_answer": "The expected value of team 1 is calculated by summing the products of each possible outcome's value and its probability.  Without knowing the specific outcomes and their probabilities for team 1, the expected value cannot be determined.",
+    "key_concepts": [
+      "Expected Value",
+      "Probability",
+      "Outcomes"
+    ]
+  },
+  {
+    "question": "So basically to get number one prize it\u2019s 75% times 75%, so that\u2019s the chance of winning 120 points. And plus we need to calculate chance on winning the second prize, that\u2019s 0.75 chance times 25% chance because team number 1 needs to win its first match then lose its second match.",
+    "candidate_answer": "It should be 82.5, if I didn\u2019t make any mistake.",
+    "is_technical": true,
+    "topic": "probability",
+    "is_correct": "Unknown",
+    "model_answer": "```json\n{\n    \"is_correct\": \"No\",\n    \"model_answer\": \"The candidate's calculation for the second prize is incorrect. The probability of winning the second prize (Team 1 wins first match, loses second",
+    "key_concepts": []
+  },
+  {
+    "question": "So can you make me a quick, without doing any more calculations, can you make me a quick market for the expected value of team 2?",
+    "candidate_answer": "Team 2, ok, so I\u2019m left with how much? 95, right? We said 95 points for team 2. Ok, so definitely team 2 should have expected value more points of team 3. So 95 divided by 2 is 47.5, and let's say around 60. That is around 60. And how large of a spread do I need to make? Two points is fine. What? Two points? So let's say 58, uh no, 59, 61.",
+    "is_technical": true,
+    "topic": "expected value",
+    "is_correct": "No",
+    "model_answer": "The candidate incorrectly divides the total points by two and then arbitrarily assigns a market. A market for the expected value of Team 2 would be a price that reflects its probability of winning. Without knowing the probabilities or the total points available for betting, a market cannot be accurately constructed.",
+    "key_concepts": [
+      "expected value",
+      "probability",
+      "market making"
+    ]
+  },
+  {
+    "question": "Now this game is going to be that I put the cards face down in front of you. And you, at every turn, have two options: you can choose to turn over a card, turn over a random card, and receive that value in dollars, or you can choose to discard a card and receive $25. But you do not get to see the card that you discarded. So let\u2019s play the game. You have four face-down cards in front of you. Are you\u2014what are you going to do? You going to randomly pick one, or are you going to discard and take 25?",
+    "candidate_answer": "Can just quick ask, do we do one turn of this game or until all cards are\u2014",
+    "is_technical": true,
+    "topic": "decision making under uncertainty",
+    "is_correct": "Unknown",
+    "model_answer": "```json\n{\n    \"is_correct\": \"Yes\",\n    \"model_answer\": \"The candidate's question is a reasonable clarification before proceeding. Understanding the game's duration is crucial for strategic decision-ma",
+    "key_concepts": []
+  },
+  {
+    "question": "Ok, so currently the expected value of me pulling\u2014turning face up one card is\u2026 that is 100 divided by 4, so that\u2019s 25. So yeah, the expected value of me turning up one card and discarding one card is currently exactly the same. But I think that maybe I will get more information if I turn one card face up.",
+    "candidate_answer": "So I will on first turn, turn one card face up.",
+    "is_technical": true,
+    "topic": "probability",
+    "is_correct": "Unknown",
+    "model_answer": "```json\n{\n    \"is_correct\": \"Yes\",\n    \"model_answer\": \"The candidate's reasoning is sound. Turning one card face up provides direct information about that card, which is valuable for decision-making ",
+    "key_concepts": []
+  },
+  {
+    "question": "Ok. Yep, correct. So let's say the first card you turn over is 30. Yep, what do you do now?",
+    "candidate_answer": "Ok, quickly calculating again expected value, so that\u2019s now 70 divided by 3\u2026 so that\u2019s 23.3. So currently, based on expected value, it\u2019s worse for me to turn one card face up. It should be better for me to discard it. And that also has\u2014to me\u2014has a good intuition because 30 was one of the higher cards, so there are more lower number cards left.",
+    "is_technical": true,
+    "topic": "probability",
+    "is_correct": "Unknown",
+    "model_answer": "```json\n{\n    \"is_correct\": \"Yes\",\n    \"model_answer\": \"The candidate correctly calculates the new expected value of the remaining cards as 23.3. This is lower than the value of the card they turned o",
+    "key_concepts": []
+  },
+  {
+    "question": "Ok, so let's say you discarded your second card. Logically, you would have no reason to keep cards after that, right?",
+    "candidate_answer": "Yeah, yeah.",
+    "is_technical": true,
+    "topic": "strategy",
+    "is_correct": "No",
+    "model_answer": "No, that's not necessarily true. You might discard your second card and still have a reason to keep other cards, depending on the game's rules and your strategy. For example, you might be trying to form a specific hand or waiting for better cards.",
+    "key_concepts": [
+      "game strategy",
+      "decision making",
+      "conditional logic"
+    ]
+  },
+  {
+    "question": "So if you picked 30, you're saying you would just discard the last 3 cards?",
+    "candidate_answer": "Yeah, yeah, actually yeah, because if I turn face up them, I will\u2014 in the end I will have total 70, and if I discard all three cards, I will have 75. So yeah, definitely, I\u2019ll discard them, all of them, yeah.",
+    "is_technical": true,
+    "topic": "strategy",
+    "is_correct": "No",
+    "model_answer": "The candidate's reasoning is flawed. If they pick 30 cards, they have 30 cards. Discarding 3 cards would leave them with 27 cards, not 75. The goal is to maximize the number of cards, so discarding cards that are part of the initial selection is counterproductive.",
+    "key_concepts": [
+      "basic arithmetic",
+      "understanding of game objectives",
+      "strategic decision-making"
+    ]
+  },
+  {
+    "question": "Do you think you might be able to do better?",
+    "candidate_answer": "Could I do better... No, because I don\u2019t get any... Ok at first my intuition tells me that no, because I don\u2019t have any intuition\u2014because I don\u2019t get any information when I discard a card, so the\u2014",
+    "is_technical": true,
+    "topic": "strategy",
+    "is_correct": "No",
+    "model_answer": "Yes, it's possible to do better. The goal is to maximize the chance of drawing a card of the same color as the first card drawn. By discarding a card of the opposite color, you increase the proportion of cards of the desired color remaining in the deck.",
+    "key_concepts": [
+      "probability",
+      "conditional probability",
+      "maximizing probability"
+    ]
+  },
+  {
+    "question": "No, I\u2019m talking about rather than discarding the second card, can you do better than that if you pick the card instead?",
+    "candidate_answer": "If I pick the\u2014at what turn, first turn or second turn?",
+    "is_technical": true,
+    "topic": "strategy",
+    "is_correct": "Partially",
+    "model_answer": "The question is asking if picking the second card is a better strategy than discarding it. If the goal is to maximize the value of the cards held, then picking the second card is generally better, as it gives you a chance to improve your hand.",
+    "key_concepts": [
+      "Decision making",
+      "Maximizing value",
+      "Game strategy"
+    ]
+  },
+  {
+    "question": "Second turn. First card is a 30. You told me that already the immediate expected value of picking a card is 23.3 versus 25 of discarding right?",
+    "candidate_answer": "Uh yes. Ok, maybe, maybe I can do better if I try to get to the 40 and then discard the rest. So let\u2019s say I do a strategy where I turn face up until I found 40 and then discard the rest. So in one third of chances, I will\u2014in the end I will have 40 plus 50\u201490 dollars. In one third chance I will have 15 plus 40\u201455 plus 25, that should be 80. And in one third chance I will... I will get 70. So yeah, actually yeah, this is better. This strategy is better. So expected value is 80 with this strategy.",
+    "is_technical": true,
+    "topic": "strategy",
+    "is_correct": "Unknown",
+    "model_answer": "```json\n{\n    \"is_correct\": \"No\",\n    \"model_answer\": \"The candidate's calculation of the expected value is incorrect. The strategy of turning cards until a 40 is reached and then discarding the rest ",
+    "key_concepts": []
+  },
+  {
+    "question": "Yep, correct. So total including the 30 would be 110. Versus if you just discard the last three cards and actually you would only have 105. So this is better indeed.",
+    "candidate_answer": "Yes.",
+    "is_technical": true,
+    "topic": "strategy",
+    "is_correct": "Yes",
+    "model_answer": "Yes, the candidate's answer is correct. The calculation confirms that including the 30 cards results in a total of 110, which is indeed better than discarding the last three cards and having only 105.",
+    "key_concepts": [
+      "basic arithmetic",
+      "comparison of quantities"
+    ]
+  },
+  {
+    "question": "So now let's think a bit more about the expected value of the game as a whole. So not given that first card is 30, but rather starting the game from scratch.",
+    "candidate_answer": "Ok.",
+    "is_technical": true,
+    "topic": "probability",
+    "is_correct": "No",
+    "model_answer": "The candidate's answer 'Ok.' is not sufficient to answer the question about the expected value of the game from scratch. To calculate the expected value, one needs to consider all possible outcomes and their probabilities, then sum the products of each outcome and its probability.",
+    "key_concepts": [
+      "Expected Value",
+      "Probability",
+      "Game Theory"
+    ]
+  },
+  {
+    "question": "So, yes, so very quickly what\u2019s a lower bound\u2014like what\u2019s a very easy lower bound for the value of the game?",
+    "candidate_answer": "Lower bound for the value of game is definitely\u2026 Hmm, that should be... 100?",
+    "is_technical": true,
+    "topic": "game theory",
+    "is_correct": "No",
+    "model_answer": "A very easy lower bound for the value of a game is the minimum payoff any player can guarantee themselves, regardless of the opponent's strategy. For example, if a player can always ensure they receive at least 100, then 100 is a lower bound.",
+    "key_concepts": [
+      "lower bound",
+      "game theory",
+      "guaranteed payoff",
+      "minimax theorem"
+    ]
+  },
+  {
+    "question": "So intuitively, why is the game worth more than 100?",
+    "candidate_answer": "Because of the cards worth 30 and 40 points. So\u2014and because of them, they are larger than discarding\u2014than the move of discarding\u2014and 10 and 20 we can, let's say, replace them with a discard and get more value out of them. So that\u2019s kind of intuition.",
+    "is_technical": true,
+    "topic": "game theory",
+    "is_correct": "Unknown",
+    "model_answer": "```json\n{\n    \"is_correct\": \"Partially\",\n    \"model_answer\": \"The game is worth more than 100 because holding high-value cards (30 and 40 points) allows players to potentially score more points than t",
+    "key_concepts": []
+  },
+  {
+    "question": "So what's your market?",
+    "candidate_answer": "108.5 and 109.5.",
+    "is_technical": true,
+    "topic": "market making",
+    "is_correct": "No",
+    "model_answer": "The question asks about the market, which typically refers to the target customer segment or industry. The answer provided, '108.5 and 109.5,' appears to be numerical data, possibly related to price points or a specific metric, but it doesn't describe the market itself.",
+    "key_concepts": [
+      "market definition",
+      "target audience",
+      "industry analysis"
+    ]
+  },
+  {
+    "question": "What do you think the expected value of the game is if you pull 40 first?",
+    "candidate_answer": "It should be a little bit larger, maybe about 112.5. Maybe something around that.",
+    "is_technical": true,
+    "topic": "game theory",
+    "is_correct": "No",
+    "model_answer": "The expected value of the game is 100. This is calculated by multiplying the probability of winning (0.5) by the prize amount (200). The number of pulls does not affect the expected value of a single pull.",
+    "key_concepts": [
+      "Expected Value",
+      "Probability",
+      "Independent Events"
+    ]
+  },
+  {
+    "question": "So can you make me a market on the number of iPhones sold in America in 2024, in millions? And can you make it five million wide?",
+    "candidate_answer": "Five million wide? Ok, so let\u2019s say America has about\u2026 300... Around 300 million people. So, and most of them has\u2014have an iPhone. Let\u2019s say around\u2026 60\u2026 50? 50? Around 50 million. So 47.5, 52.5. Let's do that.",
+    "is_technical": true,
+    "topic": "market making",
+    "is_correct": "Unknown",
+    "model_answer": "```json\n{\n    \"is_correct\": \"No\",\n    \"model_answer\": \"Estimating iPhone sales in the US for 2024 requires understanding market penetration, upgrade cycles, and new product launches. A reasonable esti",
+    "key_concepts": []
+  },
+  {
+    "question": "Did you ever consider to be a trader instead of researcher?",
+    "candidate_answer": "Uh yeah, so actually I did a trading internship when I was in university at another trading firm. But for me, the thing that pulled me away was, as a trader you are a little bit more into making kind of on-the-fly decisions and less about longer-term work. And one thing that from my background was appealing is just being able to work on more longer-term projects and thinking a little bit more deeply about problems. But that being said, I think at Da Vinci more than other trading firms, it's a little bit less clear the distinction between a quant researcher and a trader, and it's a quant trader. Because essentially there's no clear distinction in work. So I would bet even now I spend a lot of my time trading because I think it gives me better ideas and I can understand the market a bit better, and then traders also spend time doing research projects. So it\u2019s not something I would worry too much about the distinction of, at least at Da Vinci. That's more or less why I chose.",
+    "is_technical": false,
+    "topic": "career_path"
+  }
+]

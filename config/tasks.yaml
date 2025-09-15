@@ -3,91 +3,196 @@ transcription_task:
     Transcribe the audio file located at {audio_path}.
     Ensure complete and accurate transcription of all spoken words.
     Capture the full dialogue including all questions and answers.
+    Preserve the natural conversation flow.
   expected_output: |
     A complete text transcript of the audio file with all spoken words captured accurately.
-    The transcript should be clean and readable, preserving the natural flow of conversation.
+    Format: "Speaker 1: [text]" and "Speaker 2: [text]" for different speakers.
+    The transcript should preserve the entire conversation without truncation.
   agent: "transcriptionist"
 
 structuring_task:
   description: |
-    Parse the transcript and structure it into a clear Question and Answer format.
-    Identify and separate interviewer questions from candidate responses.
-    Add a [TECHNICAL] tag before any question that requires technical knowledge or explanation.
-    Examples of technical questions: algorithm explanations, system design, coding concepts, etc.
+    Parse the full transcript and extract ALL individual questions and answers.
+
+    1. Extract interview metadata:
+       - Company name (from interviewer's introduction)
+       - Role being interviewed for
+       - Interviewer's name
+       - Candidate's name
+       - Interview date (if mentioned)
+
+    2. Organize the Q&A pairs into topic sections:
+       - Introduction & Background
+       - Technical Topics (e.g., Options Pricing, Probability, etc.)
+       - Each major problem/puzzle as its own section
+       - Behavioral questions
+       - Closing questions
+
+    3. For EACH question in the interview:
+       - Extract the exact question asked by the interviewer
+       - Extract the candidate's complete answer
+       - Preserve any follow-up questions and clarifications
+       - Keep related questions grouped in the same topic
+
+    CRITICAL: Extract EVERY SINGLE question and answer pair!
+    Do not summarize or skip any questions!
   expected_output: |
-    A structured Q&A format document where:
-    - Each interviewer question is clearly marked as "Interviewer: [question]"
-    - Technical questions are marked as "Interviewer: [TECHNICAL] [question]"
-    - Each candidate response is marked as "Candidate: [response]"
-    - The dialogue flows naturally and is easy to follow
+    Structured document with:
+    1. Interview Metadata section
+    2. Topic-based sections, each containing:
+       - Section title (e.g., "Options Pricing Questions")
+       - List of Q&A pairs in this topic:
+         * Question #1: [Exact question from interviewer]
+         * Candidate Answer: [Complete answer from candidate]
+         * Question #2: [Next question]
+         * Candidate Answer: [Answer]
+         ... (continue for ALL questions in this topic)
+
+    MUST include EVERY question asked in the interview!
   agent: "dialogue_structurer"
   context_from: ["transcription_task"]
 
 technical_analysis_task:
   description: |
-    For every question tagged with [TECHNICAL]:
-    1. First, evaluate the candidate's provided answer for accuracy and completeness
-    2. Then, generate a detailed, comprehensive "ideal answer" as if writing for a textbook
-    3. Include best practices, trade-offs, and real-world considerations
-    4. Ensure the ideal answer is clear, well-structured, and educational
+    For EVERY question identified in the structured document, provide a comprehensive model answer.
+
+    Work through each topic section and for each Q&A pair:
+    1. Review the question and the candidate's answer
+    2. Create a detailed MODEL ANSWER that:
+       - Directly answers the question correctly
+       - Explains the reasoning and methodology
+       - Shows calculations if applicable
+       - Provides the optimal approach
+       - Can be as detailed as needed for learning
+
+    For technical questions (options, probability, puzzles):
+    - Show step-by-step solutions
+    - Explain underlying concepts
+    - Provide formulas and calculations
+
+    For behavioral questions:
+    - Provide framework for good answers
+    - Give example responses
+
+    CRITICAL: Provide a model answer for EVERY SINGLE question!
   expected_output: |
-    A document containing for each technical question:
-    - The original technical question
-    - The candidate's answer
-    - An evaluation of the candidate's answer (strengths and areas for improvement)
-    - A comprehensive "Ideal Answer" section with the perfect response
+    For each topic section, provide:
+    - Topic: [Topic name]
+    - For EACH question in that topic:
+      * Question: [The exact question]
+      * Candidate's Answer: [What the candidate said]
+      * MODEL ANSWER: [Comprehensive correct answer with explanation]
+      * Key Concepts: [Concepts tested by this question]
+      * Learning Notes: [What to study for this type of question]
+
+    Every question MUST have a model answer!
   agent: "technical_architect"
   context_from: ["structuring_task"]
 
 performance_review_task:
   description: |
-    Create a comprehensive performance review by:
-    1. Analyzing the candidate's technical answers against the ideal answers
-    2. Evaluating behavioral question responses for structure (STAR method), clarity, and confidence
-    3. Identifying overall strengths and areas for improvement
-    4. Providing actionable feedback for interview performance improvement
+    Analyze the candidate's performance by comparing their answers to the model answers.
+
+    1. For each topic section:
+       - Evaluate how well the candidate answered each question
+       - Identify conceptual strengths and gaps
+       - Note which questions were answered well vs poorly
+
+    2. Create an overall performance summary:
+       - Strong areas
+       - Areas needing improvement
+       - Specific concepts to study
+
+    3. Generate a learning roadmap:
+       - Priority topics to study
+       - Resources for each weak area
+       - Practice problems recommendations
   expected_output: |
-    A complete performance review containing:
-    - Overall Performance Summary (strengths and areas for improvement)
-    - Technical Skills Assessment (comparison with ideal answers)
-    - Communication Skills Assessment
-    - Behavioral Response Analysis
-    - Specific, actionable recommendations for improvement
+    Performance analysis with:
+    - Topic-by-topic evaluation with specific question performance
+    - Overall strengths and weaknesses
+    - Detailed learning roadmap with:
+      * Priority study areas
+      * Specific resources
+      * Practice problem types
+      * Time allocation suggestions
   agent: "performance_analyst"
   context_from: ["structuring_task", "technical_analysis_task"]
 
 quality_assurance_task:
   description: |
-    Perform a final review of the entire interview analysis report.
-    Check for:
-    - Coherence and consistency throughout the document
-    - Factual accuracy in technical content
-    - Professional and constructive tone
-    - Clear and actionable feedback
-    - Proper formatting and organization
-    Make any necessary edits to create a polished, professional final report.
+    Create the final polished learning document with ALL Q&A pairs and model answers.
+
+    Structure MUST be:
+    1. Header with interview metadata
+    2. Executive summary
+    3. Performance overview
+    4. DETAILED Q&A SECTIONS organized by topic:
+
+       For EACH topic section:
+       ## [Topic Name]
+
+       For EACH question in that topic:
+       ### Question X: [Exact question text]
+
+       **Candidate's Answer:**
+       [Complete candidate answer]
+
+       **MODEL ANSWER:**
+       [Comprehensive correct answer with explanations, calculations, etc.]
+
+       **Key Learning Points:**
+       - [Concept 1]
+       - [Concept 2]
+
+       ---
+
+    5. Study guide and recommendations
+
+    CRITICAL REQUIREMENTS:
+    - EVERY question must be included
+    - EVERY question must have the candidate's answer
+    - EVERY question must have a detailed model answer
+    - Clear visual separation between Q&A pairs
+    - Easy to read for study purposes
   expected_output: |
-    A polished, professional final report that includes:
-    - All previous sections edited for quality and coherence
-    - Consistent formatting throughout
-    - Clear section headers and organization
-    - Constructive and supportive tone
-    - No errors or awkward phrasing
+    A comprehensive learning document that:
+    - Shows EVERY question asked in the interview
+    - Shows EVERY candidate answer
+    - Provides EVERY model answer
+    - Is perfectly formatted for studying
+    - Has clear section headers and visual breaks
+    - Serves as a complete study guide
   agent: "quality_editor"
   context_from: ["performance_review_task", "structuring_task", "technical_analysis_task"]
 
 export_task:
   description: |
-    Take the final polished report and:
-    1. Format it beautifully with proper markdown structure
-    2. Add metadata (company: {company}, role: {role}, date: current date)
-    3. Save to Notion database if credentials are available
-    4. Otherwise, save as a well-formatted markdown file in the interviews directory
-    5. Ensure all sections are properly organized with clear headers
+    Export the final learning document with proper formatting.
+
+    1. Add header with:
+       - Company: {company} (or extract from transcript)
+       - Role: {role} (or extract from transcript)
+       - Date: current date
+       - Candidate and interviewer names (from transcript)
+
+    2. Ensure the document includes:
+       - Executive summary
+       - ALL Q&A pairs with model answers
+       - Performance analysis
+       - Study recommendations
+
+    3. Verify completeness:
+       - Check that EVERY question has been included
+       - Confirm all model answers are present
+       - Ensure formatting is clean and readable
+
+    4. Save as a comprehensive markdown file
   expected_output: |
-    A confirmation message indicating:
-    - Where the report was saved (Notion or local markdown file)
-    - The filename or Notion page URL
-    - Success status of the export operation
+    Confirmation that the learning document was saved with:
+    - File path
+    - Total number of questions included
+    - Verification that all Q&A pairs have model answers
+    - Topics covered
   agent: "notion_exporter"
   context_from: ["quality_assurance_task"]

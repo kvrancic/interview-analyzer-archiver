@@ -1,25 +1,25 @@
-# 🎙️ Automated Internship Assistant
+# 🎙️ Interview Learning Assistant
 
-An AI-powered multi-agent system that analyzes interview audio recordings and provides comprehensive feedback using CrewAI and OpenRouter.
+An AI-powered multi-agent system that transforms interview audio recordings into comprehensive learning documents with Q&A pairs and model answers using CrewAI.
 
 ## 📋 Overview
 
 This project implements a sophisticated 6-agent sequential workflow that:
 1. Transcribes interview audio using GPT-4o audio preview
-2. Structures the transcript into Q&A format
-3. Analyzes technical responses with expert-level feedback
-4. Provides holistic performance review
-5. Ensures quality and coherence
-6. Exports results to Notion or markdown
+2. Extracts every Q&A pair from the interview
+3. Generates comprehensive model answers for each question
+4. Analyzes performance gaps and learning opportunities
+5. Formats everything into a clean study document
+6. Exports results as structured markdown files
 
 ## 🚀 Features
 
 - **Audio Transcription**: Supports MP3, WAV, M4A, OGG, and WebM formats (up to 20MB)
-- **Intelligent Analysis**: Distinguishes between technical and behavioral questions
-- **Expert Feedback**: Compares answers against ideal responses from a "Principal Engineer AI"
-- **Performance Coaching**: Provides actionable feedback on both technical and communication skills
-- **Flexible Export**: Saves to Notion database or local markdown files
-- **Multi-Model Support**: Uses different AI models optimized for each task
+- **Complete Q&A Extraction**: Captures every single question and answer from the interview
+- **Model Answer Generation**: Provides comprehensive correct answers for all questions
+- **Topic Organization**: Groups related questions into logical sections
+- **Learning Focused**: Designed for interview preparation and knowledge archiving
+- **Multi-Model Support**: Uses optimized AI models for each specific task
 
 ## 🛠️ Installation
 
@@ -77,35 +77,35 @@ python src/main.py --audio interview.wav --output results/
 
 ## 🤖 Agent Architecture
 
-### 1. The Transcriptionist
+### 1. Transcriptionist
 - **Role**: Audio Intelligence Specialist
-- **Model**: Google Gemini 2.0 Flash (via OpenRouter)
+- **Model**: GPT-4o Audio Preview
 - **Task**: Accurately transcribe audio to text
 
-### 2. The Dialogue Structurer
-- **Role**: Interview Scribe & Organizer
-- **Model**: Google Gemini 2.0 Flash
-- **Task**: Parse transcript into Q&A format, tag technical questions
+### 2. Dialogue Structurer
+- **Role**: Interview Q&A Extractor
+- **Model**: Google Gemini 2.5 Flash Lite
+- **Task**: Extract ALL Q&A pairs and organize by topic
 
-### 3. The Technical Solution Architect
-- **Role**: Principal Engineer AI
-- **Model**: Qwen 2.5 72B Instruct
-- **Task**: Evaluate technical answers and provide ideal solutions
+### 3. Technical Architect
+- **Role**: Model Answer Creator
+- **Model**: Google Gemini 2.5 Flash Lite
+- **Task**: Generate comprehensive model answers for every question
 
-### 4. The Performance Analyst & Coach
-- **Role**: AI Interview Coach
-- **Model**: Google Gemini 2.0 Flash
-- **Task**: Provide holistic performance review
+### 4. Performance Analyst
+- **Role**: Learning Performance Analyst
+- **Model**: Google Gemini 2.5 Flash Lite
+- **Task**: Compare answers and create learning roadmap
 
-### 5. The Quality Assurance Editor
-- **Role**: Chief Editor AI
-- **Model**: Google Gemini 2.0 Flash
-- **Task**: Final review for coherence and accuracy
+### 5. Quality Editor
+- **Role**: Learning Document Creator
+- **Model**: Google Gemini 2.5 Flash Lite
+- **Task**: Format Q&As with model answers clearly
 
-### 6. The Notion Exporter
+### 6. Notion Exporter
 - **Role**: Digital Records Manager
-- **Model**: Google Gemini 2.0 Flash
-- **Task**: Export to Notion or markdown format
+- **Model**: Google Gemini 2.5 Flash Lite
+- **Task**: Export and verify completeness
 
 ## 📂 Project Structure
 
@@ -129,25 +129,32 @@ internship-agent/
 
 ## 📊 Output Format
 
-The analysis report includes:
+The learning document includes:
 
 ```markdown
-# [Company] - [Role] Interview Analysis
+# Interview Learning Document
 
-## Overall Performance Summary
-- Strengths
-- Areas for Improvement
+## Interview Metadata
+- Company: [Company Name]
+- Role: [Position]
+- Interviewer: [Name]
+- Candidate: [Name]
 
-## Full Interview Transcript & Analysis
+## Topic: [e.g., Options Pricing]
 
-### Question 1: [Question]
-**Your Answer:** [Candidate's response]
-**Coach's Notes:** [Feedback]
+### Question 1: [Exact question text]
 
-### Question 2 [TECHNICAL]: [Technical Question]
-**Your Answer:** [Candidate's response]
-**Coach's Notes:** [Comparison with ideal answer]
-**⭐ Ideal Answer:** [Expert-level response]
+**Candidate's Answer:**
+[Complete answer from candidate]
+
+**MODEL ANSWER:**
+[Comprehensive correct answer with explanations]
+
+**Key Learning Points:**
+- Concept 1
+- Concept 2
+
+---
 ```
 
 ## 🔧 Configuration
@@ -166,8 +173,7 @@ NOTION_DATABASE_ID=your_notion_database_id_here
 ### Model Configuration
 Models can be changed in `config/agents.yaml`. Current models used:
 - Transcription: `openai/gpt-4o-audio-preview`
-- Analysis: `google/gemini-2.0-flash-exp:free`
-- Technical Review: `qwen/qwen-2.5-72b-instruct`
+- All Agents: `google/gemini-2.5-flash-lite` (cost-effective and efficient)
 
 ## 🧪 Testing
 
@@ -176,15 +182,15 @@ To test with a sample audio file:
 2. Run: `python src/main.py --audio audio/sample_interview.mp3`
 3. Check the `interviews/` directory for the output
 
-## 📝 Assignment Requirements
+## 📝 Key Requirements
 
-This project fulfills the MIT AI Studio homework requirements:
-- ✅ Multiple agents with defined roles, goals, and backstories (6 agents)
-- ✅ Multiple tasks with descriptions and expected outputs (6 sequential tasks)
-- ✅ Terminal interaction via CLI
-- ✅ Clean, well-documented Python code
-- ✅ GitHub repository structure
-- ✅ Comprehensive documentation
+This project was built with specific requirements:
+- ✅ MUST use CrewAI framework (hard requirement)
+- ✅ Process interview audio into learning materials
+- ✅ Extract ALL questions and answers
+- ✅ Provide model answers for every question
+- ✅ Create documents suitable for interview preparation
+- ✅ Archive interviews for future learning
 
 ## 🤝 Contributing
 
